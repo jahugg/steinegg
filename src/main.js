@@ -27,8 +27,10 @@ function selectGalleryItem(listElement) {
   const targetImageEl = listElement.querySelector('img');
   const galleryEl = listElement.closest('.gallery');
   const mainImageEl = galleryEl.querySelector('.gallery__main img');
+  const captionEl = galleryEl.querySelector('.gallery__main figcaption');
 
-  mainImageEl.src = targetImageEl.src; // set new image
+  mainImageEl.replaceWith(targetImageEl.cloneNode()); // set new image
+  captionEl.innerHTML = targetImageEl.alt;
 
   // remove selected states
   let galleryItems = galleryEl.querySelectorAll('li');
