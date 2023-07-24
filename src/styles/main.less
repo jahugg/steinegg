@@ -30,7 +30,7 @@ html {
   --color-shadow: hsl(0 0% 4% / 0.6);
   --color-highlight: hsl(215, 75%, 83%);
   --font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
-  --font-regular: 400 clamp(0.8em, 3vw, 1em) / 1.4em var(--font-family);
+  --font-regular: 400 clamp(0.8em, 3vw, 1em) / 1.3em var(--font-family);
   --font-title: 600 clamp(2em, 10vw, 4em) / 1em var(--font-family);
   --font-h1: 600 clamp(1em, 4vw, 1.6em) / 1.2em var(--font-family);
   --font-small: italic 400 clamp(0.6em, 2vw, 0.8em) / 1.1em var(--font-family);
@@ -42,7 +42,7 @@ html {
 #app {
   font-size: 1.8rem;
   color: var(--color-foreground);
-  height: 100vh;
+  height: 100dvh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   background: var(--color-background);
@@ -53,9 +53,44 @@ html {
   padding: 3em min(10vw, 25px);
 }
 
+#season-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: hsl(0 0% 100% / 0.3);
+  border-radius: 100px;
+  display: flex;
+  gap: 5px;
+  border: solid 3px hsl(0 0% 100% / 0.3);
+
+  input[type='radio'] {
+    display: none;
+
+    &:checked + label {
+      background-color: hsl(0 0% 100% / 0.3);
+    }
+  }
+
+  label {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    aspect-ratio: 1/1;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
 #section-teaser {
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,8 +99,9 @@ html {
   scroll-snap-align: start;
   box-shadow: var(--box-shadow);
   overflow: hidden;
-  background: url('../media/hero-01.webp') center center;
+  background: url('../media/teaser-summer.webp') center center;
   background-size: cover;
+  transition: background-image 0.5s ease-out;
 
   #title {
     text-align: center;
@@ -78,7 +114,7 @@ html {
 
     h1 {
       font: var(--font-title);
-      margin-bottom: .2em;
+      margin-bottom: 0.2em;
     }
 
     h2 {
@@ -129,8 +165,13 @@ html {
       }
     }
 
+    ul {
+      margin: 0;
+      padding: 1em;
+    }
+
     ul li {
-      margin-bottom: 0.4em;
+      margin-bottom: 1em;
       font: var(--font-regular);
     }
 
@@ -140,38 +181,39 @@ html {
     }
   }
 
-  #gallery {
+  .gallery {
     width: 100%;
     max-width: var(--max-width);
     margin: 1em 0;
 
-    ul {
+    .gallery__main {
+      flex: 0 0 100%;
+      height: min(60vh, 500px);
+      max-height: 500px;
+      margin-bottom: 2px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    ul.gallery__list {
       margin: 0;
       padding: 0;
       list-style-type: none;
       width: 100%;
       display: flex;
       gap: 2px;
-      flex-wrap: wrap;
+      overflow-x: scroll;
     }
 
     li {
       position: relative;
-      flex: 1 1 80px;
+      flex: 0 0 80px;
       height: 80px;
       cursor: pointer;
-
-      &:first-child {
-        flex: 0 0 100%;
-        height: 40vh;
-        max-height: 500px;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
 
       &[data-selected] {
         border: solid 4px var(--color-foreground);

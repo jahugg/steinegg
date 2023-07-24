@@ -9,6 +9,12 @@
   <body>
     <div id="app">
       <section id="section-teaser" class="page-section">
+        <div id="season-toggle">
+          <input type="radio" name="season" value="summer" id="summer" checked/>
+          <label for="summer"><img src="src/media/summer.svg" alt="sun"></label>
+          <input type="radio" name="season" value="winter" id="winter" />
+          <label for="winter"><img src="src/media/winter.svg" alt="snowflake"></label>
+        </div>
         <div id="title">
           <h1>Chalet Steinegg</h1>
           <h2>Abschalten und auftanken in Grindelwald</h2>
@@ -25,9 +31,8 @@
         <article>
           <p>
             Willkommen im Chalet Steinegg, unserem geräumigen und gemütlichen Chalet in Grindelwald mit freiem Blick auf die Eiger-Nordwand und die
-            Berner Alpen. Mit seinen sechs Zimmern auf zwei Etagen eignet es sich besonders für Familien und mittelgrosse Gruppen.
+            Berner Alpen. Mit seinen sechs Schlafzimmern auf zwei Etagen eignet es sich besonders für Familien und mittelgrosse Gruppen.
           </p>
-
           <p>
             Das 1962 von der Familie erbaute und 2010 renovierte Chalet liegt am Südhang des Tales, 20 Gehminuten vom Dorfzentrum entfernt. Es bietet
             eine geräumige und gemütlich eingerichtete Wohnung im klassischen Chaletstil für bis zu 12 Personen. Eine weitere Wohnung im zweiten Stock
@@ -45,9 +50,9 @@
           </p>
         </article>
 
-        <div id="gallery">
-          <ul>
-            <li><img src="src/media/steinegg-1.webp" alt="mountain" /></li>
+        <div class="gallery">
+          <div class="gallery__main"><img src="src/media/steinegg-1.webp" alt="mountain" /></div>
+          <ul class="gallery__list">
             <li data-selected><img src="src/media/steinegg-1.webp" alt="mountain" /></li>
             <li><img src="src/media/steinegg-2.webp" alt="mountain" /></li>
             <li><img src="src/media/steinegg-3.webp" alt="mountain" /></li>
@@ -117,6 +122,8 @@
           Schweiz<br /><br />
 
           <a href="mailto:chalet@steinegg.casa">info@chaletsteinegg.ch</a><br />
+          <a href="https://www.instagram.com/chalet_steinegg/">Instagram</a><br />
+          
         </address>
       </section>
     </div>
