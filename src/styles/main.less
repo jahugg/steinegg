@@ -95,7 +95,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: max(10px, 14vh);
+  gap: max(10px, 12vh);
   scroll-snap-align: start;
   box-shadow: var(--box-shadow);
   overflow: hidden;
@@ -191,6 +191,7 @@ html {
       height: min(60vh, 500px);
       margin-bottom: 2px;
       position: relative;
+      background: black;
 
       figcaption {
         position: absolute;
@@ -200,6 +201,10 @@ html {
         width: 100%;
         padding: .6em;
         font: var(--font-small);
+      }
+
+      img {
+        object-fit: cover;
       }
     }
 

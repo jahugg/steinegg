@@ -80,7 +80,7 @@ html img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: max(10px, 14vh);
+  gap: max(10px, 12vh);
   scroll-snap-align: start;
   box-shadow: var(--box-shadow);
   overflow: hidden;
@@ -162,6 +162,7 @@ html img {
   height: min(60vh, 500px);
   margin-bottom: 2px;
   position: relative;
+  background: black;
 }
 #section-content .gallery .gallery__main figcaption {
   position: absolute;
@@ -171,6 +172,9 @@ html img {
   width: 100%;
   padding: 0.6em;
   font: var(--font-small);
+}
+#section-content .gallery .gallery__main img {
+  object-fit: cover;
 }
 #section-content .gallery img {
   width: 100%;
