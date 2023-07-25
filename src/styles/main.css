@@ -20,7 +20,7 @@ html img {
 :root {
   --color-background: hsl(0, 0%, 10%);
   --color-foreground: hsl(0, 0%, 96%);
-  --color-shadow: hsla(0, 0%, 4%, 0.6);
+  --color-shadow: hsla(0, 0%, 4%, 0.4);
   --color-highlight: hsl(215, 75%, 83%);
   --font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
   --font-regular: 400 clamp(0.8em, 3vw, 1em) / 1.3em var(--font-family);
@@ -28,7 +28,7 @@ html img {
   --font-h1: 600 clamp(1em, 4vw, 1.6em) / 1.2em var(--font-family);
   --font-small: italic 400 clamp(0.6em, 2vw, 0.8em) / 1.1em var(--font-family);
   --max-width: 700px;
-  --text-shadow: 2px 2px 10px var(--color-shadow);
+  --text-shadow: 2px 2px 8px var(--color-shadow);
   --box-shadow: 0 5px 10px var(--color-shadow);
 }
 #app {
@@ -41,7 +41,7 @@ html img {
 }
 .page-section {
   scroll-snap-align: start;
-  padding: 3em min(10vw, 25px);
+  padding: 3em min(10vw, 20px);
 }
 #season-toggle {
   position: absolute;
@@ -80,13 +80,18 @@ html img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: max(10px, 12vh);
+  gap: 12vh;
   scroll-snap-align: start;
   box-shadow: var(--box-shadow);
   overflow: hidden;
   background: url('../media/teaser-summer.webp') center center;
   background-size: cover;
   transition: background-image 0.5s ease-out;
+}
+@media (max-width: 700px) {
+  #section-teaser {
+    gap: 7vh;
+  }
 }
 #section-teaser #title {
   text-align: center;
