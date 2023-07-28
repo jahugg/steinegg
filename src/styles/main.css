@@ -36,11 +36,9 @@ html img {
   color: var(--color-foreground);
   height: 100dvh;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
   background: var(--color-background);
 }
 .page-section {
-  scroll-snap-align: start;
   padding: 3em min(10vw, 20px);
 }
 #season-toggle {
